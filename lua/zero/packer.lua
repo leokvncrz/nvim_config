@@ -43,6 +43,9 @@ return require('packer').startup(function(use)
   -- co-pilot
   use('github/copilot.vim')
 
+  -- status line
+  use('nvim-lualine/lualine.nvim')
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
