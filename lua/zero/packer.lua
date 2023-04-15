@@ -46,6 +46,10 @@ return require('packer').startup(function(use)
   -- status line
   use('nvim-lualine/lualine.nvim')
 
+  -- auto closing
+  use('windwp/nvim-autopairs')
+  use('windwp/nvim-ts-autotag')
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
