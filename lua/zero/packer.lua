@@ -50,6 +50,9 @@ return require('packer').startup(function(use)
   use('windwp/nvim-autopairs')
   use('windwp/nvim-ts-autotag')
 
+  -- git signs plugin
+  use('lewis6991/gitsigns.nvim')
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
