@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 
   -- icons
   use('kyazdani42/nvim-web-devicons')
+  use('mortepau/codicons.nvim')
 
   -- co-pilot
   use('github/copilot.vim')
@@ -52,6 +53,14 @@ return require('packer').startup(function(use)
 
   -- git signs plugin
   use('lewis6991/gitsigns.nvim')
+
+  -- dart plugin
+  use('dart-lang/dart-vim-plugin')
+  use('natebosch/vim-lsc')
+  use('natebosch/vim-lsc-dart')
+
+  -- dap
+  use('mfussenegger/nvim-dap');
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -74,5 +83,14 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},             -- Required
 		  {'rafamadriz/friendly-snippets'}, -- Optional
 	  }
+  }
+
+  -- dap for js
+  use{ 'mxsdev/nvim-dap-vscode-js', requires={'mfussenegger/nvim-dap'} }
+  use{ 'rcarriga/nvim-dap-ui', requires={'mfussenegger/nvim-dap'} }
+  use{
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
 end)

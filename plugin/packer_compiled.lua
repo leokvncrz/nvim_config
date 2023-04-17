@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["codicons.nvim"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/codicons.nvim",
+    url = "https://github.com/mortepau/codicons.nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
   },
   ["feline.nvim"] = {
     loaded = true,
@@ -168,6 +178,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-vscode-js"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
+    url = "https://github.com/mxsdev/nvim-dap-vscode-js"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -225,6 +250,16 @@ _G.packer_plugins = {
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-lsc"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-lsc",
+    url = "https://github.com/natebosch/vim-lsc"
+  },
+  ["vim-lsc-dart"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-lsc-dart",
+    url = "https://github.com/natebosch/vim-lsc-dart"
+  },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
@@ -239,6 +274,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vscode-js-debug"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/opt/vscode-js-debug",
+    url = "https://github.com/microsoft/vscode-js-debug"
   }
 }
 
