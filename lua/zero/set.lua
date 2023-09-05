@@ -14,7 +14,9 @@ opt.autoindent = true
 opt.smartindent = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
+vim.wrap = "linebreak"
+
 
 -- search settings
 opt.ignorecase = true

@@ -62,6 +62,9 @@ return require('packer').startup(function(use)
   -- dap
   use('mfussenegger/nvim-dap');
 
+  -- prettier
+  use('MunifTanjim/prettier.nvim')
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
