@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('tpope/vim-commentary')
   use('feline-nvim/feline.nvim')
   use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
   use('bluz71/vim-nightfly-guicolors')

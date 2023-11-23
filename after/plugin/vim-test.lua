@@ -13,9 +13,16 @@ vim.cmd [[
   endfunction
 ]]
 
+vim.cmd[[
+  function! NearestSticky()
+    let g:test#basic#start_normal = 1
+    TestNearest -strategy=basic
+    unlet g:test#basic#start_normal
+  endfunction
+]]
+
+vim.keymap.set("n", "<leader>ts", vim.fn.NearestSticky)
+
 
 vim.cmd[[ let test#custom_strategies = { 'echo': function('EchoStrategy') } ]]
 -- vim.g['test#strategy'] = 'echo';
-
-
-
