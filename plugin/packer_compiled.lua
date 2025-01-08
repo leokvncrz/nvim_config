@@ -265,6 +265,11 @@ _G.packer_plugins = {
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
+  ["vim-rest-console"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-rest-console",
+    url = "https://github.com/diepm/vim-rest-console"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/vim-surround",

@@ -90,5 +90,8 @@ return require('packer').startup(function(use)
   }
 
   use('vim-test/vim-test')
+
+  -- rest console / postman replacement
+  use('diepm/vim-rest-console')
 end)
 
