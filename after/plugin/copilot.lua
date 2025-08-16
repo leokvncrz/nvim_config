@@ -8,4 +8,6 @@ vim.g.copilot_filetypes = {
   ["lua"] = false,
   ["c#"] = true,
   ["php"] = true,
+  ["dart"] = true,
+  ["svelte"] = true,
 }
