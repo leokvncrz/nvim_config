@@ -169,6 +169,16 @@ _G.packer_plugins = {
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -189,6 +199,11 @@ _G.packer_plugins = {
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -208,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zero/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["overseer.nvim"] = {
+    loaded = true,
+    path = "/Users/zero/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

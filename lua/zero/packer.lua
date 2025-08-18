@@ -93,5 +93,16 @@ return require('packer').startup(function(use)
 
   -- rest console / postman replacement
   use('diepm/vim-rest-console')
+
+  -- project runner
+  use('stevearc/overseer.nvim')
+
+  use {
+    'folke/noice.nvim',
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    }
+  }
 end)
 
