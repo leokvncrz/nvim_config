@@ -1,1 +1,2 @@
-require("zero")
+require("zero.core")
+require("zero.lazy")
