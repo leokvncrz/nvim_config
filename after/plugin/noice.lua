@@ -4,7 +4,7 @@ require("noice").setup({
     view = "cmdline_popup", -- 👈 use popup instead of bottom
   },
   messages = {
-    enabled = true, -- replaces `:messages`
+    enabled = false, -- replaces `:messages`
   },
   popupmenu = {
     enabled = true, -- cmdline completion menu
