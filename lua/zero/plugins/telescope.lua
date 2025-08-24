@@ -6,6 +6,7 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "folke/todo-comments.nvim",
+    "ThePrimeagen/git-worktree.nvim",
   },
 
   config = function()
@@ -18,6 +19,8 @@ return {
       }
     })
 
+    telescope.load_extension("git_worktree")
+
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
@@ -26,5 +29,7 @@ return {
     keymap.set("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>pt", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
     keymap.set("n", "<leader>pk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
+    keymap.set("n", "<leader>pw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", silent)
+    keymap.set("n", "<leader>pW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", silent)
   end
 }

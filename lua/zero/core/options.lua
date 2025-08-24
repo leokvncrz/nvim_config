@@ -55,3 +55,5 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 -- opt.colorcolumn = "80"
+opt.showcmd = true
+

@@ -6,6 +6,11 @@ return {
   },
   config = function()
     local noice = require("noice")
+    local notify = require("notify")
+
+    notify.setup({
+      background_colour = "#000000", -- set background color for notifications
+    })
 
     noice.setup({
       cmdline = {
