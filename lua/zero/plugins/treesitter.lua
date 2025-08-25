@@ -40,7 +40,9 @@ return {
         "dockerfile",
         "gitignore",
         "query",
+        "dart",
       },
+      auto_intsall = true,
       incremental_selection = {
         enable = true,
         keymaps = {

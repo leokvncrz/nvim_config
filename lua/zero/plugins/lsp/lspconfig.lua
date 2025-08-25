@@ -86,6 +86,42 @@ return {
       },
     })
 
+    local dartExcludedFolders = {
+				vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
+				vim.fn.expand("$HOME/.pub-cache"),
+				vim.fn.expand("/opt/homebrew/"),
+				vim.fn.expand("$HOME/tools/flutter/"),
+			}
+
+    vim.lsp.config("dartls", {
+      capabilities = capabilities,
+      cmd = {
+        "dart",
+        "language-server",
+        "--protocol=lsp",
+        -- "--port=8123",
+        -- "--instrumentation-log-file=/Users/robertbrunhage/Desktop/lsp-log.txt",
+      },
+      filetypes = { "dart" },
+      init_options = {
+        onlyAnalyzeProjectsWithOpenFiles = false,
+        suggestFromUnimportedLibraries = true,
+        closingLabels = true,
+        outline = false,
+        flutterOutline = false,
+      },
+      settings = {
+        dart = {
+          analysisExcludedFolders = dartExcludedFolders,
+          updateImportsOnRename = true,
+          completeFunctionCalls = true,
+          showTodos = true,
+        },
+      },
+    })
+
+    vim.lsp.enable("dartls")
+
     -- Setup handlers only if mason_lspconfig is properly loaded
     if mason_lspconfig and mason_lspconfig.setup_handlers then
       mason_lspconfig.setup_handlers({
