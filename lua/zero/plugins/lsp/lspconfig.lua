@@ -30,6 +30,17 @@ return {
         local opts = { buffer = ev.buf, silent = true }
 
         -- set keybinds
+        opts.desc = "Format Document"
+        keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
+        
+        -- Disable LSP formatting for C# files
+        if vim.bo.filetype == "cs" then
+          opts.desc = "Format Document (Conform)"
+          keymap.set("n", "<leader>f", function() 
+            require("conform").format({ async = true })
+          end, opts)
+        end
+
         opts.desc = "Show LSP references"
         keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
@@ -183,6 +194,74 @@ return {
             capabilities = capabilities,
             filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
             root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+          })
+        end,
+        ["omnisharp"] = function()
+          -- configure omnisharp server with formatting disabled
+          local client_capabilities = vim.deepcopy(capabilities)
+          client_capabilities.textDocument.formatting = false
+          client_capabilities.textDocument.rangeFormatting = false
+          
+          lspconfig["omnisharp"].setup({
+            capabilities = client_capabilities,
+            on_attach = function(client, bufnr)
+              -- Disable formatting capabilities for this client
+              client.server_capabilities.documentFormattingProvider = false
+              client.server_capabilities.documentRangeFormattingProvider = false
+            end,
+            settings = {
+              omnisharp = {
+                enableEditorConfigSupport = true,
+                enableImportCompletion = true,
+                enableRoslynAnalyzers = true,
+                organizeImportsOnFormat = false,
+                enableFormatting = false, -- Disable OmniSharp formatting
+                formatOnSave = false, -- Disable format on save
+                formatOnType = false, -- Disable format on type
+                useModernNet = true, -- Use modern .NET for better performance
+                fileOptions = {
+                  useBom = false, -- Disable BOM
+                  encoding = "utf8", -- Use UTF-8 without BOM
+                },
+              },
+            },
+          })
+        end,
+        ["csharp_ls"] = function()
+          -- configure csharp-language-server with formatting disabled
+          local client_capabilities = vim.deepcopy(capabilities)
+          client_capabilities.textDocument.formatting = false
+          client_capabilities.textDocument.rangeFormatting = false
+          
+          lspconfig["csharp_ls"].setup({
+            capabilities = client_capabilities,
+            on_attach = function(client, bufnr)
+              -- Disable formatting capabilities for this client
+              client.server_capabilities.documentFormattingProvider = false
+              client.server_capabilities.documentRangeFormattingProvider = false
+            end,
+            settings = {
+              csharp = {
+                format = {
+                  enable = false, -- Disable csharp-language-server formatting
+                },
+                inlayHints = {
+                  enableInlayHintsForParameters = false,
+                  enableInlayHintsForLiteralParameters = false,
+                  enableInlayHintsForObjectCreationParameters = false,
+                  enableInlayHintsForOtherParameters = false,
+                  enableInlayHintsForIndexerParameters = false,
+                  enableInlayHintsForObjectInitializerParameters = false,
+                  enableInlayHintsForOtherParameters = false,
+                  enableInlayHintsForLiteralParameters = false,
+                },
+                -- File encoding settings
+                fileOptions = {
+                  useBom = false, -- Disable BOM
+                  encoding = "utf8", -- Use UTF-8 without BOM
+                },
+              },
+            },
           })
         end,
       })

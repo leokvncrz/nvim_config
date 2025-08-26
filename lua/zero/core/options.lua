@@ -12,6 +12,10 @@ opt.expandtab = true
 opt.autoindent = true
 
 opt.smartindent = true
+opt.bomb = false
+
+opt.fileencoding = "utf-8"
+opt.encoding = "utf-8"
 
 -- line wrapping
 opt.wrap = true
@@ -56,4 +60,20 @@ opt.updatetime = 50
 
 -- opt.colorcolumn = "80"
 opt.showcmd = true
+
+-- Prefer Unix endings and never write BOM
+opt.fileformats = { "unix", "dos" }
+opt.fileformat  = "unix"
+opt.diffopt:append("iwhite")  -- ignore whitespace in :diffthis / :Gdiff etc.
+
+-- C# specific settings to prevent BOM and carriage return issues
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cs",
+  callback = function()
+    vim.opt_local.fileformat = "unix"
+    vim.opt_local.bomb = false
+    vim.opt_local.fileencoding = "utf-8"
+  end,
+})
+
 
