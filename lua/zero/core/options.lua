@@ -19,7 +19,6 @@ opt.encoding = "utf-8"
 
 -- line wrapping
 opt.wrap = true
-vim.wrap = "linebreak"
 
 
 -- search settings
@@ -70,7 +69,7 @@ opt.diffopt:append("iwhite")  -- ignore whitespace in :diffthis / :Gdiff etc.
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "cs",
   callback = function()
-    vim.opt_local.fileformat = "unix"
+    vim.opt_local.fileformat = "utf-8"
     vim.opt_local.bomb = false
     vim.opt_local.fileencoding = "utf-8"
   end,
