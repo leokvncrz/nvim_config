@@ -2,15 +2,15 @@ return {
   "folke/noice.nvim",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    -- "rcarriga/nvim-notify",
   },
   config = function()
     local noice = require("noice")
-    local notify = require("notify")
+    -- local notify = require("notify")
 
-    notify.setup({
-      background_colour = "#000000", -- set background color for notifications
-    })
+    -- notify.setup({
+    --   background_colour = "#000000", -- set background color for notifications
+    -- })
 
     noice.setup({
       cmdline = {

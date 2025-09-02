@@ -9,6 +9,13 @@ return {
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
+    -- ARB as JSON
+    vim.filetype.add({
+      extension = {
+        arb = "json",
+      },
+    })
+
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
       highlight = {

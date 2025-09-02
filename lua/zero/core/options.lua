@@ -19,6 +19,7 @@ opt.encoding = "utf-8"
 
 -- line wrapping
 opt.wrap = true
+vim.wrap = "linebreak"
 
 
 -- search settings
@@ -75,4 +76,5 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-
+-- Clipboard settings
+opt.clipboard = "unnamedplus"  -- Use the system clipboard for all operations

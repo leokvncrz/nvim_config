@@ -2,12 +2,19 @@ return {
   "zbirenbaum/copilot.lua",
   event = "VeryLazy",
   config = function()
-    local copilot = require("copilot") 
+    local copilot = require("copilot")
     copilot.setup({
       suggestion = {
         enabled = true,
         auto_trigger = true,
-        accept = false,
+        keymap = {
+          accept = "<Tab>",
+          accept_word = false,
+          accept_line = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
       },
       panel = {
         enabled = false,
@@ -20,7 +27,6 @@ return {
         typescript = true,
         ["*"] = true
       },
-
     })
   end
 }

@@ -32,11 +32,11 @@ return {
         -- set keybinds
         opts.desc = "Format Document"
         keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
-        
+
         -- Disable LSP formatting for C# files
         if vim.bo.filetype == "cs" then
           opts.desc = "Format Document (Conform)"
-          keymap.set("n", "<leader>f", function() 
+          keymap.set("n", "<leader>f", function()
             require("conform").format({ async = true })
           end, opts)
         end
@@ -203,7 +203,7 @@ return {
           local client_capabilities = vim.deepcopy(capabilities)
           client_capabilities.textDocument.formatting = false
           client_capabilities.textDocument.rangeFormatting = false
-          
+
           lspconfig["omnisharp"].setup({
             capabilities = client_capabilities,
             on_attach = function(client, bufnr)
@@ -234,7 +234,7 @@ return {
           local client_capabilities = vim.deepcopy(capabilities)
           client_capabilities.textDocument.formatting = false
           client_capabilities.textDocument.rangeFormatting = false
-          
+
           lspconfig["csharp_ls"].setup({
             capabilities = client_capabilities,
             on_attach = function(client, bufnr)
@@ -249,9 +249,7 @@ return {
                 },
                 inlayHints = {
                   enableInlayHintsForParameters = false,
-                  enableInlayHintsForLiteralParameters = false,
                   enableInlayHintsForObjectCreationParameters = false,
-                  enableInlayHintsForOtherParameters = false,
                   enableInlayHintsForIndexerParameters = false,
                   enableInlayHintsForObjectInitializerParameters = false,
                   enableInlayHintsForOtherParameters = false,
