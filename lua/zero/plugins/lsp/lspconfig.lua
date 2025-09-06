@@ -198,37 +198,6 @@ return {
             root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
           })
         end,
-        ["omnisharp"] = function()
-          -- configure omnisharp server with formatting disabled
-          local client_capabilities = vim.deepcopy(capabilities)
-          client_capabilities.textDocument.formatting = false
-          client_capabilities.textDocument.rangeFormatting = false
-
-          lspconfig["omnisharp"].setup({
-            capabilities = client_capabilities,
-            on_attach = function(client, bufnr)
-              -- Disable formatting capabilities for this client
-              client.server_capabilities.documentFormattingProvider = false
-              client.server_capabilities.documentRangeFormattingProvider = false
-            end,
-            settings = {
-              omnisharp = {
-                enableEditorConfigSupport = true,
-                enableImportCompletion = true,
-                enableRoslynAnalyzers = true,
-                organizeImportsOnFormat = false,
-                enableFormatting = false, -- Disable OmniSharp formatting
-                formatOnSave = false, -- Disable format on save
-                formatOnType = false, -- Disable format on type
-                useModernNet = true, -- Use modern .NET for better performance
-                fileOptions = {
-                  useBom = false, -- Disable BOM
-                  encoding = "utf8", -- Use UTF-8 without BOM
-                },
-              },
-            },
-          })
-        end,
         ["csharp_ls"] = function()
           -- configure csharp-language-server with formatting disabled
           local client_capabilities = vim.deepcopy(capabilities)

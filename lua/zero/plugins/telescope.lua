@@ -31,7 +31,7 @@ return {
     -- keymap.set("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     -- keymap.set("n", "<leader>pt", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
     -- keymap.set("n", "<leader>pk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
-    keymap.set("n", "<leader>pw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", silent)
+    keymap.set("n", "<leader>pw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", { desc = "List Worktrees"},silent)
     -- keymap.set("n", "<leader>pW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", silent)
   end
 }
