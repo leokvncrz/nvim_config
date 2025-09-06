@@ -21,6 +21,7 @@ return {
     })
 
     telescope.load_extension("git_worktree")
+    telescope.load_extension("fzf")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness

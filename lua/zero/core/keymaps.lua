@@ -12,7 +12,3 @@ keymap.set("n", "<leader>w", ":update<Return>", opts)
 keymap.set("n", "<leader>q", ":quit<Return>", opts)
 keymap.set("n", "<leader>Q", ":qa<Return>", opts)
 
-
-
-
-
